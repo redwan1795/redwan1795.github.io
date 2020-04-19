@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PixlLab Projects</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 19 Apr 2020 14:23:01 -0600</pubDate>
+    <lastBuildDate>Sun, 19 Apr 2020 14:23:01 -0600</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Robot Operating System Setup Guide!</title>
+        <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt;
+	&lt;title&gt;&lt;/title&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;LibreOffice 5.1.6.2 (Linux)&quot;/&gt;
+	&lt;meta name=&quot;created&quot; content=&quot;2020-02-20T14:19:32.400227980&quot;/&gt;
+	&lt;meta name=&quot;changed&quot; content=&quot;2020-02-28T15:45:31.818858915&quot;/&gt;
+	&lt;style type=&quot;text/css&quot;&gt;
+		@page { margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 120% }
+		h3.cjk { font-family: &quot;Noto Sans CJK SC Regular&quot; }
+		h3.ctl { font-family: &quot;FreeSans&quot; }
+		pre.cjk { font-family: &quot;Nimbus Mono L&quot;, monospace }
+		td p { margin-bottom: 0in }
+		h2.cjk { font-family: &quot;Noto Sans CJK SC Regular&quot; }
+		h2.ctl { font-family: &quot;FreeSans&quot; }
+		a:link { so-language: zxx }
+		tt.cjk { font-family: &quot;Nimbus Mono L&quot;, monospace }
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body lang=&quot;en-US&quot; dir=&quot;ltr&quot;&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;br/&gt;
+&lt;u&gt;&lt;b&gt;Ubuntu
+Version&lt;/b&gt;&lt;/u&gt;&lt;br/&gt;
+&lt;/font&gt;&lt;/font&gt;&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROS
+Kinetic &lt;/font&gt;&lt;/font&gt;&lt;strong&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ONLY&lt;/font&gt;&lt;/font&gt;&lt;/strong&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+supports Wily (Ubuntu 15.10), Xenial (Ubuntu 16.04) and Jessie
+(Debian 8) for debian packages.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;u&gt;&lt;b&gt;Configure
+Ubuntu&lt;br/&gt;
+&lt;/b&gt;&lt;/u&gt;&lt;span style=&quot;text-decoration: none&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;
+Open “Software &amp;amp; Updates” and configure accordingly
+https://help.ubuntu.com/community/Repositories/Ubuntu&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0in; font-weight: normal; line-height: 100%; text-decoration: none&quot;&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;h3 class=&quot;western&quot;&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.Setup_your_sources.list&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;u&gt;&lt;b&gt;Setup
+your sources.list&lt;/b&gt;&lt;/u&gt;&lt;/font&gt;&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.line-7&quot;&gt;&lt;/a&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.line-6&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Setup
+your computer to accept software from packages.ros.org. &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;sudo sh -c 'echo &amp;quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&amp;quot; &amp;gt; /etc/apt/sources.list.d/ros-latest.list'&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;h3 class=&quot;western&quot;&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.line-16&quot;&gt;&lt;/a&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.Set_up_your_keys&quot;&gt;&lt;/a&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.line-15&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Set
+up your keys&lt;/font&gt;&lt;/font&gt;&lt;/h3&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.line-22&quot;&gt;&lt;/a&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.line-21&quot;&gt;&lt;/a&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.line-24&quot;&gt;&lt;/a&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.line-23&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;If
+you experience issues connecting to the keyserver, you can try
+substituting &lt;/font&gt;&lt;/font&gt;&lt;tt class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;hkp://pgp.mit.edu:80&lt;/font&gt;&lt;/font&gt;&lt;/tt&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+or &lt;/font&gt;&lt;/font&gt;&lt;tt class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;hkp://keyserver.ubuntu.com:80&lt;/font&gt;&lt;/font&gt;&lt;/tt&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+in the previous command. &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Alternatively,
+you can use curl instead of the apt-key command, which can be helpful
+if you are behind a proxy server: &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&amp;amp;search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654' | sudo apt-key add&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+	&lt;pre class=&quot;western&quot; style=&quot;margin-bottom: 0.2in&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;br/&gt;
+I&lt;/font&gt;&lt;/font&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;span lang=&quot;en-US&quot;&gt;&lt;span style=&quot;text-decoration: none&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;f you experience issues connecting to the keyserver, you can try substituting &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;tt class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;span lang=&quot;en-US&quot;&gt;&lt;span style=&quot;text-decoration: none&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;hkp://pgp.mit.edu:80&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;/tt&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;span lang=&quot;en-US&quot;&gt;&lt;span style=&quot;text-decoration: none&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt; or &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;tt class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;span lang=&quot;en-US&quot;&gt;&lt;span style=&quot;text-decoration: none&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;hkp://keyserver.ubuntu.com:80&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;/tt&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;span lang=&quot;en-US&quot;&gt;&lt;span style=&quot;text-decoration: none&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt; in the previous command. &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;margin-bottom: 0.2in; font-weight: normal; text-decoration: none&quot;&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.line-241&quot;&gt;&lt;/a&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.line-231&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Alternatively,
+you can use curl instead of the apt-key command, which can be helpful
+if you are behind a proxy server:&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;curl
+			-sSL
+			'http://keyserver.ubuntu.com/pks/lookup?op=get&amp;amp;search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654'
+			| sudo apt-key add -&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p style=&quot;margin-bottom: 0.2in&quot;&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.line-29&quot;&gt;&lt;/a&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-Sources.bottom&quot;&gt;&lt;/a&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;h3 class=&quot;western&quot;&gt;&lt;a name=&quot;Installation-1&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;u&gt;Installation&lt;/u&gt;&lt;/font&gt;&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;First,
+make sure your Debian package index is up-to-date: &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;sudo apt-get update&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;There
+are many different libraries and tools in ROS. We provided four
+default configurations to get you started. You can also install ROS
+packages individually. &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;In
+case of problems with the next step, you can use following
+repositories instead of the ones mentioned above &lt;a href=&quot;http://wiki.ros.org/ShadowRepository&quot;&gt;ros-shadow-fixed&lt;/a&gt;
+&lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li/&gt;
+&lt;p&gt;&lt;strong&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Desktop-Full
+	Install: (Recommended)&lt;/font&gt;&lt;/font&gt;&lt;/strong&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+	: ROS, &lt;a href=&quot;http://wiki.ros.org/rqt&quot;&gt;rqt&lt;/a&gt;, &lt;a href=&quot;http://wiki.ros.org/rviz&quot;&gt;rviz&lt;/a&gt;,
+	robot-generic libraries, 2D/3D simulators, navigation and 2D/3D
+	perception &lt;/font&gt;&lt;/font&gt;
+	&lt;/p&gt;
+	&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+		&lt;col width=&quot;256*&quot;&gt;
+		&lt;tr&gt;
+			&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+				&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;sudo apt-get install ros-kinetic-desktop-full&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+	&lt;p&gt;&lt;a name=&quot;line-43&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-44&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+	&lt;p&gt;&lt;a name=&quot;line-45&quot;&gt;&lt;/a&gt;&lt;strong&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Desktop
+	Install: &lt;/font&gt;&lt;/font&gt;&lt;/strong&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROS,
+	&lt;a href=&quot;http://wiki.ros.org/rqt&quot;&gt;rqt&lt;/a&gt;, &lt;a href=&quot;http://wiki.ros.org/rviz&quot;&gt;rviz&lt;/a&gt;,
+	and robot-generic libraries &lt;br/&gt;
+&lt;/font&gt;&lt;/font&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+	&lt;/p&gt;
+&lt;/ul&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;sudo apt-get install ros-kinetic-desktop&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;a name=&quot;line-48&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-49&quot;&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;ul&gt;
+	&lt;p&gt;&lt;a name=&quot;line-51&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-50&quot;&gt;&lt;/a&gt;&lt;strong&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROS-Base:
+	(Bare Bones)&lt;/font&gt;&lt;/font&gt;&lt;/strong&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+	ROS package, build, and communication libraries. No GUI tools. &lt;br/&gt;
+&lt;/font&gt;&lt;/font&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+	&lt;/p&gt;
+	&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+		&lt;col width=&quot;256*&quot;&gt;
+		&lt;tr&gt;
+			&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+				&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;sudo apt-get install ros-kinetic-ros-base&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+	&lt;p&gt;&lt;a name=&quot;line-54&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-55&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-56&quot;&gt;&lt;/a&gt;
+	&lt;/p&gt;
+	&lt;p&gt;&lt;strong&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Individual
+	Package:&lt;/font&gt;&lt;/font&gt;&lt;/strong&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+	You can also install a specific ROS package (replace underscores
+	with dashes of the package name): &lt;/font&gt;&lt;/font&gt;
+	&lt;/p&gt;
+	&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+		&lt;col width=&quot;256*&quot;&gt;
+		&lt;tr&gt;
+			&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+				&lt;pre class=&quot;western&quot;&gt;&lt;a name=&quot;line-1-7&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;sudo apt-get install ros-kinetic-PACKAGE&lt;br/&gt;
+e.g.&lt;br/&gt;
+sudo apt-get install ros-kinetic-slam-gmapping&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+	&lt;p&gt;&lt;a name=&quot;line-57&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a name=&quot;line-64&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-63&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;To
+find available packages, use: &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;apt-cache search ros-kinetic&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;h3 class=&quot;western&quot;&gt;&lt;a name=&quot;Initialize_rosdep&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;u&gt;Initialize
+rosdep&lt;/u&gt;&lt;/font&gt;&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a name=&quot;line-71&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-70&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Before
+you can use ROS, you will need to initialize &lt;/font&gt;&lt;/font&gt;&lt;tt class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;rosdep&lt;/font&gt;&lt;/font&gt;&lt;/tt&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;.
+&lt;/font&gt;&lt;/font&gt;&lt;tt class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;rosdep&lt;/font&gt;&lt;/font&gt;&lt;/tt&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+enables you to easily install system dependencies for source you want
+to compile and is required to run some core components in ROS. &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;sudo rosdep init&lt;/font&gt;&lt;/font&gt;
+&lt;a name=&quot;line-2-2&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;rosdep update&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;a name=&quot;line-73&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-72&quot;&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;pre class=&quot;western&quot;&gt;&lt;/pre&gt;&lt;h3 class=&quot;western&quot;&gt;
+&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.Environment_setup&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;u&gt;Environment
+setup&lt;/u&gt;&lt;/font&gt;&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.line-4&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;It's
+convenient if the ROS environment variables are automatically added
+to your bash session every time a new shell is launched: &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;echo &amp;quot;source /opt/ros/kinetic/setup.bash&amp;quot; &amp;gt;&amp;gt; ~/.bashrc&lt;/font&gt;&lt;/font&gt;
+&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.line-2-1&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;source ~/.bashrc&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.line-6&quot;&gt;&lt;/a&gt;&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.line-5&quot;&gt;&lt;/a&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;pre class=&quot;western&quot;&gt;&lt;/pre&gt;&lt;p&gt;
+&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.line-10&quot;&gt;&lt;/a&gt;&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.line-12&quot;&gt;&lt;/a&gt;&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.line-11&quot;&gt;&lt;/a&gt;
+&lt;em&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;If
+you have more than one ROS distribution installed, &lt;/font&gt;&lt;/font&gt;&lt;/em&gt;&lt;em&gt;&lt;tt class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;~/.bashrc&lt;/font&gt;&lt;/font&gt;&lt;/tt&gt;&lt;/em&gt;&lt;em&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+must only source the &lt;/font&gt;&lt;/font&gt;&lt;/em&gt;&lt;em&gt;&lt;tt class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;setup.bash&lt;/font&gt;&lt;/font&gt;&lt;/tt&gt;&lt;/em&gt;&lt;em&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+for the version you are currently using.&lt;/font&gt;&lt;/font&gt;&lt;/em&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+&lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.line-14&quot;&gt;&lt;/a&gt;&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.line-13&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;If
+you just want to change the environment of your current shell,
+instead of the above you can type: &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;source /opt/ros/kinetic/setup.bash&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;pre class=&quot;western&quot; style=&quot;margin-bottom: 0.2in&quot;&gt;
+&lt;/pre&gt;&lt;p&gt;
+&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.line-17&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;If
+you use zsh instead of bash you need to run the following commands to
+set up your shell: &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;echo &amp;quot;source /opt/ros/kinetic/setup.zsh&amp;quot; &amp;gt;&amp;gt; ~/.zshrc&lt;/font&gt;&lt;/font&gt;
+&lt;a name=&quot;kinetic.2BAC8-Installation.2BAC8-DebEnvironment.line-2-2&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;source ~/.zshrc&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;pre class=&quot;western&quot;&gt;&lt;/pre&gt;&lt;h3 class=&quot;western&quot;&gt;
+&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-BinariesBuildDependencies.Dependencies_for_building_packages&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;u&gt;Dependencies
+for building packages&lt;/u&gt;&lt;/font&gt;&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-BinariesBuildDependencies.line-2&quot;&gt;&lt;/a&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-BinariesBuildDependencies.line-4&quot;&gt;&lt;/a&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-BinariesBuildDependencies.line-3&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Up
+to now you have installed what you need to run the core ROS packages.
+To create and manage your own ROS workspaces, there are various tools
+and requirements that are distributed separately. For example,
+&lt;a href=&quot;http://wiki.ros.org/rosinstall&quot;&gt;rosinstall&lt;/a&gt; is a
+frequently used command-line tool that enables you to easily download
+many source trees for ROS packages with one command. &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;To
+install this tool and other dependencies for building ROS packages,
+run: &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-BinariesBuildDependencies.line-6&quot;&gt;&lt;/a&gt;&lt;a name=&quot;Installation.2BAC8-Ubuntu.2BAC8-BinariesBuildDependencies.line-5&quot;&gt;&lt;/a&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;h3 class=&quot;western&quot;&gt;&lt;a name=&quot;Build_farm_status&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-82&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-81&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Build
+farm status&lt;/font&gt;&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a name=&quot;line-84&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-83&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;The
+packages that you installed were built by the &lt;a href=&quot;http://build.ros.org/&quot;&gt;ROS
+build farm&lt;/a&gt;. You can check the status of individual packages &lt;a href=&quot;http://repositories.ros.org/status_page/ros_kinetic_default.html&quot;&gt;here&lt;/a&gt;.
+&lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;h2 class=&quot;western&quot;&gt;&lt;a name=&quot;Managing_Your_Environment&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Managing
+Your Environment&lt;/font&gt;&lt;/font&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a name=&quot;line-341&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-361&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-351&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;During
+the installation of ROS, you will see that you are prompted to &lt;/font&gt;&lt;/font&gt;&lt;tt class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;source&lt;/font&gt;&lt;/font&gt;&lt;/tt&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+one of several setup.*sh files, or even add this 'sourcing' to your
+shell startup script. This is required because ROS relies on the
+notion of combining spaces using the shell environment. This makes
+developing against different versions of ROS or against different
+sets of packages easier. &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;If
+you are ever having problems finding or using your ROS packages make
+sure that you have your environment properly setup. A good way to
+check is to ensure that &lt;a href=&quot;http://wiki.ros.org/ROS/EnvironmentVariables&quot;&gt;environment
+variables&lt;/a&gt; like &lt;a href=&quot;http://wiki.ros.org/ROS/EnvironmentVariables#ROS_ROOT&quot;&gt;ROS_ROOT&lt;/a&gt;
+and &lt;a href=&quot;http://wiki.ros.org/ROS/EnvironmentVariables#ROS_PACKAGE_PATH&quot;&gt;ROS_PACKAGE_PATH&lt;/a&gt;
+are set: &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;$ printenv | grep ROS&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;line-411&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-431&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-421&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;If
+they are not then you might need to 'source' some setup.*sh files. &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;line-451&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-441&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Environment
+setup files are generated for you, but can come from different
+places: &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li/&gt;
+&lt;p style=&quot;margin-bottom: 0in&quot;&gt;&lt;a name=&quot;line-461&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROS
+	packages installed with package managers provide setup.*sh files &lt;/font&gt;&lt;/font&gt;
+	&lt;/p&gt;
+	&lt;li/&gt;
+&lt;p&gt;&lt;a name=&quot;line-471&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;a href=&quot;http://www.ros.org/wiki/fuerte/Installation/Overlays&quot;&gt;rosbuild
+	workspaces&lt;/a&gt; provide setup.*sh files using tools like &lt;a href=&quot;http://wiki.ros.org/rosws&quot;&gt;rosws&lt;/a&gt;
+	&lt;/font&gt;&lt;/font&gt;
+	&lt;/p&gt;
+	&lt;li/&gt;
+&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Setup.*sh
+	files are created as a by-product of &lt;a href=&quot;http://wiki.ros.org/catkin/workspaces#Building_Packages_with_catkin&quot;&gt;building&lt;/a&gt;
+	or &lt;a href=&quot;http://wiki.ros.org/catkin/workspaces#Installing_Packages_with_Catkin&quot;&gt;installing&lt;/a&gt;
+	catkin packages &lt;/font&gt;&lt;/font&gt;
+	&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;printenv
+			| grep ROS&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;p style=&quot;margin-bottom: 0in&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROS_ROOT=/opt/ros/kinetic/share/ros&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p style=&quot;margin-bottom: 0in&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROS_PACKAGE_PATH=/opt/ros/kinetic/share&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p style=&quot;margin-bottom: 0in&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROS_MASTER_URI=http://localhost:11311&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p style=&quot;margin-bottom: 0in&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROS_PYTHON_VERSION=2&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p style=&quot;margin-bottom: 0in&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROS_VERSION=1&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p style=&quot;margin-bottom: 0in&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROSLISP_PACKAGE_DIRECTORIES=&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p style=&quot;margin-bottom: 0in&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROS_DISTRO=kinetic&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ROS_ETC_DIR=/opt/ros/kinetic/etc/ros&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;line-571&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-591&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-581&quot;&gt;&lt;/a&gt;
+&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Using
+the short name of your ROS distribution instead of &lt;/font&gt;&lt;/font&gt;&lt;tt class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&amp;lt;distro&amp;gt;&lt;/font&gt;&lt;/font&gt;&lt;/tt&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;
+&lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;#669966&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;b&gt;If
+you installed ROS Kinetic, that would be: &lt;/b&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font color=&quot;#669966&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;b&gt;$ source /opt/ros/kinetic/setup.bash&lt;/b&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;a name=&quot;line-611&quot;&gt;&lt;/a&gt;&lt;a name=&quot;line-601&quot;&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;h2 class=&quot;western&quot;&gt;&lt;a name=&quot;Create_a_ROS_Workspace&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Create
+a ROS Workspace&lt;/font&gt;&lt;/font&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Let's
+create and build a &lt;a href=&quot;http://wiki.ros.org/catkin/workspaces&quot;&gt;catkin
+workspace&lt;/a&gt;: &lt;/font&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;pre class=&quot;western&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;$ mkdir -p ~/catkin_ws/src&lt;/font&gt;&lt;/font&gt;
+&lt;a name=&quot;ROS.2BAC8-Tutorials.2BAC8-catkin.2BAC8-CreateWorkspace.line-2-1&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;$ cd ~/catkin_ws/&lt;/font&gt;&lt;/font&gt;
+&lt;a name=&quot;ROS.2BAC8-Tutorials.2BAC8-catkin.2BAC8-CreateWorkspace.line-3-1&quot;&gt;&lt;/a&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;$ catkin_make&lt;/font&gt;&lt;/font&gt;&lt;/pre&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;a name=&quot;ROS.2BAC8-Tutorials.2BAC8-catkin.2BAC8-CreateWorkspace.line-5&quot;&gt;&lt;/a&gt;&lt;a name=&quot;ROS.2BAC8-Tutorials.2BAC8-catkin.2BAC8-CreateWorkspace.line-4&quot;&gt;&lt;/a&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;pre class=&quot;western&quot;&gt;&lt;/pre&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Found Threads: TRUE  &lt;/font&gt;&lt;/font&gt;
+			&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Using Python nosetests: /usr/bin/nosetests-2.7&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			catkin 0.7.20&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			BUILD_SHARED_LIBS is on&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			BUILD_SHARED_LIBS is on&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Configuring done&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Generating done&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Build files have been written to: /home/redwan/catkin_ws/build&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;####&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;####
+			Running command: &amp;quot;make -j8 -l8&amp;quot; in
+			&amp;quot;/home/redwan/catkin_ws/build&amp;quot;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;####&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;pre class=&quot;western&quot; style=&quot;margin-bottom: 0.2in&quot;&gt;&lt;/pre&gt;&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;
+&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt; 
+&lt;/p&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;col width=&quot;256*&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;100%&quot; valign=&quot;top&quot; style=&quot;border: 1px solid #000000; padding: 0.04in&quot;&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;catkin_make
+			-DPYTHON_EXECUTABLE=/usr/bin/python3&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;br/&gt;
+
+			&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Base
+			path: /home/redwan/catkin_ws&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Source
+			space: /home/redwan/catkin_ws/src&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Build
+			space: /home/redwan/catkin_ws/build&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Devel
+			space: /home/redwan/catkin_ws/devel&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Install
+			space: /home/redwan/catkin_ws/install&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;####&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;####
+			Running command: &amp;quot;cmake /home/redwan/catkin_ws/src
+			-DPYTHON_EXECUTABLE=/usr/bin/python3
+			-DCATKIN_DEVEL_PREFIX=/home/redwan/catkin_ws/devel
+			-DCMAKE_INSTALL_PREFIX=/home/redwan/catkin_ws/install -G Unix
+			Makefiles&amp;quot; in &amp;quot;/home/redwan/catkin_ws/build&amp;quot;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;####&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Using CATKIN_DEVEL_PREFIX: /home/redwan/catkin_ws/devel&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Using CMAKE_PREFIX_PATH: /opt/ros/kinetic&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			This workspace overlays: /opt/ros/kinetic&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Found PythonInterp: /usr/bin/python3 (found suitable version
+			&amp;quot;3.5.2&amp;quot;, minimum required is &amp;quot;2&amp;quot;) &lt;/font&gt;&lt;/font&gt;
+			&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Using PYTHON_EXECUTABLE: /usr/bin/python3&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Using Debian Python package layout&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Using empy: /usr/bin/empy&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Using CATKIN_ENABLE_TESTING: ON&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Call enable_testing()&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Using CATKIN_TEST_RESULTS_DIR:
+			/home/redwan/catkin_ws/build/test_results&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Found gtest sources under '/usr/src/gmock': gtests will be built&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Found gmock sources under '/usr/src/gmock': gmock will be built&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Found PythonInterp: /usr/bin/python3 (found version &amp;quot;3.5.2&amp;quot;)
+			&lt;/font&gt;&lt;/font&gt;
+			&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Using Python nosetests: /usr/bin/nosetests-2.7&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font color=&quot;#ff3333&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;ImportError:
+			&amp;quot;from catkin_pkg.package import parse_package&amp;quot; failed:
+			No module named 'catkin_pkg'&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font color=&quot;#ff3333&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Make
+			sure that you have installed &amp;quot;catkin_pkg&amp;quot;, it is up to
+			date and on the PYTHONPATH.&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font color=&quot;#ff3333&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;CMake
+			Error at
+			/opt/ros/kinetic/share/catkin/cmake/safe_execute_process.cmake:11
+			(message):&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font color=&quot;#ff3333&quot;&gt;  &lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;execute_process(/usr/bin/python3&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;  &lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&amp;quot;/opt/ros/kinetic/share/catkin/cmake/parse_package_xml.py&amp;quot;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;  &lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&amp;quot;/opt/ros/kinetic/share/catkin/cmake/../package.xml&amp;quot;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt; 
+			&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;&lt;font color=&quot;#ff3333&quot;&gt;&amp;quot;/home/redwan/catkin_ws/build/catkin/catkin_generated/version/package.cmake&amp;quot;)&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font color=&quot;#ff3333&quot;&gt;  &lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;returned
+			error code 1&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Call
+			Stack (most recent call first):&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt; 
+			&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;/opt/ros/kinetic/share/catkin/cmake/catkin_package_xml.cmake:74
+			(safe_execute_process)&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;  &lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;/opt/ros/kinetic/share/catkin/cmake/all.cmake:168
+			(_catkin_package_xml)&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;  &lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;/opt/ros/kinetic/share/catkin/cmake/catkinConfig.cmake:20
+			(include)&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;  &lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;CMakeLists.txt:56
+			(find_package)&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;br/&gt;
+
+			&lt;/p&gt;
+			&lt;p&gt;&lt;br/&gt;
+
+			&lt;/p&gt;
+			&lt;p&gt;&lt;font color=&quot;#ff3333&quot;&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;--
+			Configuring incomplete, errors occurred!&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;See
+			also &amp;quot;/home/redwan/catkin_ws/build/CMakeFiles/CMakeOutput.log&amp;quot;.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;See
+			also &amp;quot;/home/redwan/catkin_ws/build/CMakeFiles/CMakeError.log&amp;quot;.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+			&lt;p&gt;&lt;font face=&quot;Verdana, sans-serif&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;font-size: 12pt&quot;&gt;Invoking
+			&amp;quot;cmake&amp;quot; failed&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p style=&quot;margin-bottom: 0in; line-height: 100%&quot;&gt;&lt;br/&gt;
+
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</description>
+        <pubDate>Sun, 19 Apr 2020 14:22:39 -0600</pubDate>
+        <link>http://localhost:4000/documentation/2020/04/19/ROS-SetUp.html</link>
+        <guid isPermaLink="true">http://localhost:4000/documentation/2020/04/19/ROS-SetUp.html</guid>
+        
+        
+        <category>Documentation</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Pixel Lab Projects!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 18 Apr 2020 23:46:39 -0600</pubDate>
+        <link>http://localhost:4000/welcome/notes/2020/04/18/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://localhost:4000/welcome/notes/2020/04/18/welcome-to-jekyll.html</guid>
+        
+        
+        <category>Welcome</category>
+        
+        <category>Notes</category>
+        
+      </item>
+    
+  </channel>
+</rss>
