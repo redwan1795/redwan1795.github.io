@@ -1,5 +1,5 @@
 # PixlLabPublicSite
-ROS, MAP Setup, Drone Silimulation, Wearable Project
+ROS, MAP Setup, Drone Simulation, Wearable Project
 
 # Project Summary
 
