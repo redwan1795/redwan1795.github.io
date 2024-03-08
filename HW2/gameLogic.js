@@ -152,7 +152,7 @@ function cell_clicked(r,x,y)
         buttonItem.setAttribute("disabled", false);
         buttonItem.disabled = false;
         buttonItem.textContent = "Restart!";
-        
+        disableGrid();
         alert('player1 is the winner!'); 
     }
     else if (winner == 2)
@@ -162,6 +162,7 @@ function cell_clicked(r,x,y)
         buttonItem.setAttribute("disabled", false);
         buttonItem.disabled = false;
         buttonItem.textContent = "Restart!";
+        disableGrid();
         alert('player2 is the winner!'); 
     }
     else if (winner == 3)
@@ -171,6 +172,7 @@ function cell_clicked(r,x,y)
         buttonItem.setAttribute("disabled", false);
         buttonItem.disabled = false;
         buttonItem.textContent = "Restart!";
+        disableGrid();
         alert('It is a draw!'); 
     }
     else if (winner == 4)
@@ -336,5 +338,21 @@ function blinkAnimate(x,y,direction)
 
     });
 }
+function disableGrid()
+{
+    
+    const cells = document.querySelectorAll('td');
+    cells.forEach(cell => 
+    {
+        cell.removeEventListener("click",cell_clicked,true);
+        //cell.ariaReadOnly = "true";
 
+
+    });
+    
+
+    console.log("Disable it now!");
+    const table = document.querySelectorAll('table');
+
+}
 

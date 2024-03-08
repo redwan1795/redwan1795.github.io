@@ -11,30 +11,47 @@
     <link rel="stylesheet" href="mystyle.css">
     
 </head>
+
 <header>
-    <p> This is Connect 4 Game!
-        <br> 6x7 is the dimension of the board.
-        <br> Two players can play together.
-        <br> If one of the two players can match four of their colors (Horizontally/Vertically/Diagonally) wins.
-    </p>
+    <img class ="logo" src="images/signature-1.jpeg" alt = "logo" width="30%" height="50%">
+    <nav>  
+        <!-- Navigation Menu -->
+        
+          
+             <ul class = "nav_links">
+                 <li><a href="index.html">Game Home</a></li>
+             </ul>
+     </nav>
+     
+
+
 </header> 
 <body class="body_container">
     <script src="gameLogic.js"></script>
-    <button type="button" id="button1" onclick="initiateGame()" style="background-color:#008CBA;">Start Connect4!</button>
-    <button type="button" id="button2" onclick="printArray()" style="background-color: #008CBA;">Print Array!</button>
+    <div class = "item one"> <img src="images/logo.jpeg" alt="Redwan" width="80%" height="auto"></div>
+    <div class = item> 
+        <h1 style="color: floralwhite;padding-left: 2%;line-height: 2;">Connect4! </h1>
+        <button type="button" id="button1" onclick="initiateGame()" style="background-color:#008CBA;">Start Connect4!</button>
+        <button type="button" id="button2" onclick="printArray()" style="background-color: #008CBA;">Print Array!</button>
+        <p> This is Connect 4 Game!
+            <br> 6x7 is the dimension of the board.
+            <br> Two players can play together.
+            <br> If one of the two players can match four of their colors (Horizontally/Vertically/Diagonally) wins.
+        </p>
+    </div>
 
-<div id = "node-id">
-    <p id = "counter" class = "blink"> 
-        Play Turn of: Player1, Color is YELLOW
-    </p>
-</div>
-<p></p>
-<p></p>
+    <div id = "node-id">
+        <p id = "counter" class = "blink"> 
+            Play Turn of: Player1, Color is YELLOW
+        </p>
+    </div>
+    <p></p>
+    <p></p>
 
 </body>
 
 
-<footer>
+<footer class="footer">
     <p> Designed and Developed by Redwan Ul Haq Choyon 
         <br>©Redwan Ul Haq Choyon 
     <a href="mailto:redwan@nmsu.edu" style="color: burlywood;">redwan@nmsu.edu</a><br></p>

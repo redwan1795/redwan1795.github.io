@@ -54,6 +54,10 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
 }
+.one{
+   align-self: center;
+   background: none;
+}
 
 
 .grid{
@@ -61,7 +65,7 @@
     left: 50%;
     width: 600px;
     height: 520px;
-    top: 9rem;
+    top: 12rem;
     background: #000000;
     padding: .5rem;
     
